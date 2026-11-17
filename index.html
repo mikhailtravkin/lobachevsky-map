@@ -1,4 +1,3 @@
-<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
 <title>Н. И. Лобачевский и Казанская математическая школа</title>
 <style>
 
@@ -25,18 +24,7 @@
   --font-body: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
   --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
   --panel-w: min(440px, 40vw);
-}
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --sea: #0a1522; --land: #13263b; --land-line: #3f5c7b; --river: #2c5a83; --grid: #16273a;
-    --ink: #e7eef6; --ink-2: #9db1c7; --accent: #f2b544; --accent-soft: #3a2f16;
-    --panel: #0f1d2e; --panel-line: #25394f; --focus: #7fb4e6; color-scheme: dark;
-  }
-}
-:root[data-theme="dark"] {
-  --sea: #0a1522; --land: #13263b; --land-line: #3f5c7b; --river: #2c5a83; --grid: #16273a;
-  --ink: #e7eef6; --ink-2: #9db1c7; --accent: #f2b544; --accent-soft: #3a2f16;
-  --panel: #0f1d2e; --panel-line: #25394f; --focus: #7fb4e6; color-scheme: dark;
+  color-scheme: light;
 }
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
@@ -153,7 +141,6 @@ body.wide .about-btn, body.wide .up-btn, body.wide .hud { display: none; }
 .bar button:hover { border-color: var(--accent); }
 .bar button[aria-pressed="true"] { background: var(--accent-soft); border-color: var(--accent); }
 .bar .count { margin-left: auto; font: 400 11.5px var(--font-mono); color: var(--ink-2); }
-.note-video { margin: 6px 0 0; font-size: 11.5px; color: var(--ink-2); }
 
 .facts { margin: 18px 0 0; padding: 0; list-style: none; display: grid; gap: 9px; }
 .facts li { padding-left: 16px; position: relative; font-size: 14px; max-width: 62ch; }
@@ -375,9 +362,11 @@ body.guess .up-btn { display: none; }
 .ref.rel.w span { color: #4f86b3; }
 .ref.rel.m span { color: #8a7040; font-style: normal; font-weight: 600; text-transform: uppercase; letter-spacing: .1em; font-size: 10px; }
 :root { --mount: #c8b58c; }
-@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --mount: #6a5a3c; } }
-:root[data-theme="dark"] { --mount: #6a5a3c; }
 @media (max-width: 760px) { body .up-btn { top: auto; bottom: calc(150px + env(safe-area-inset-bottom, 0px)); right: calc(16px + env(safe-area-inset-right, 0px)); } }
+.tri { margin: 8px 0; } .tri svg { width: 100%; max-width: 380px; display: block; margin: 0 auto; }
+.tri-f { fill: var(--panel); stroke: var(--ink); stroke-width: 1.6; stroke-linejoin: round; } .tri-h { stroke: var(--ink-2); stroke-width: 1.6; stroke-dasharray: 5 4; } .tri-r { fill: none; stroke: var(--ink); stroke-width: 1.2; }
+.tri-d { fill: var(--accent); } .tri-t { font: 500 12px var(--font-body); fill: var(--ink); } .tri-l { font: 600 13px var(--font-mono); fill: var(--accent); } .tri-q { font: 600 13px var(--font-mono); fill: var(--ink-2); }
+.tri-n { margin: 4px 0 0; font-size: 12.5px; color: var(--ink-2); }
 .qtask .qn { background: transparent; color: var(--accent); border-color: var(--accent); }
 .qtask p b { color: var(--accent); }
 .rfin { margin: 8px 0 0; font-size: 13px; }
@@ -481,10 +470,9 @@ body.guess .pin:not(.gm) { display: none; }
     <div class="eyebrow">Лобачевский и XXI век · 2026</div>
     <h1 id="heroTitle">Н. И. Лобачевский и Казанская математическая школа</h1>
     <p class="lead">Квест об учёных Казанской математической школы: Бартельсе, Лобачевском, Васильеве, Чеботарёве, Петрове и других. Находите места на карте, смотрите рассказы и отвечайте на вопросы.</p>
-    <p class="goal"><b>Цель карты</b>Понять, откуда пришли идеи Лобачевского и как учёные были связаны друг с другом.</p>
+    <p class="goal"><b>Цель карты</b>Познакомиться с учёными Казанской школы и лауреатами наград имени Лобачевского, их достижениями и связями «учитель – ученик» и тем самым популяризировать математику.</p>
     <div class="starts">
       <div class="start"><h3>Маршрут</h3><p>Учёные по порядку: рассказ и задания.</p><button type="button" id="hsRoute">Начать маршрут</button></div>
-      <div class="start"><h3>Квест</h3><p>Ищите места на карте и получайте баллы.</p><button type="button" id="hsQuest">Начать с Лобачевского</button></div>
       <div class="start"><h3>Свободный просмотр</h3><p>Открывайте любые карточки сами.</p><button type="button" class="alt" id="hsFree">Открыть карту</button></div>
     </div>
   </div>
@@ -501,7 +489,7 @@ body.guess .pin:not(.gm) { display: none; }
     <header class="title" id="titleBox">
       <div class="eyebrow">Лобачевский и XXI век</div>
       <h1>Н. И. Лобачевский и Казанская математическая школа</h1>
-      <p>Выберите слой и нажмите «Пройти маршрут»: карта проведёт по учёным этого слоя в хронологическом порядке. Или сыграйте в квест: найдите место на карте, ответьте на вопросы, получите баллы и купите награду.</p>
+      <p>Нажмите «Пройти маршрут»: карта проведёт по учёным Казанской школы в хронологическом порядке. Или сыграйте в квест: найдите место на карте, ответьте на вопросы, получите баллы и купите награду.</p>
     </header>
     <section class="fcard" id="layersBox" aria-label="Фильтры карты">
       <h2>Слои</h2>
@@ -514,11 +502,10 @@ body.guess .pin:not(.gm) { display: none; }
         <button class="tog" id="arcsBtn" aria-pressed="true">Путь в Казань</button>
       </div>
       <div class="row" id="routeRow">
-        <button class="tog go" id="routeBtn" aria-pressed="false" aria-expanded="false" aria-controls="routePick">Пройти маршрут</button>
+        <button class="tog go" id="routeBtn" aria-pressed="false">Пройти маршрут</button>
         <span class="prog" id="progText"></span>
         <button class="lnk" id="seenReset" type="button" hidden>сбросить просмотры</button>
       </div>
-      <div class="rpick" id="routePick" hidden></div>
     </section>
   </div>
 
@@ -638,7 +625,7 @@ var RELIEF={"r":["455,4hp,-6,f,-k,7,6,g,-o,o,-3,r,-m,b,-j,s,-k,c,0,7,g,4,l,o,16,
       ],
       facts: ["Винтовое исчисление и векторные методы в механике.", "Принцип перенесения Котельникова – Штуди.", "С 1904 года заведовал кафедрой чистой математики Казанского университета."],
       sources: [["MacTutor", "https://mathshistory.st-andrews.ac.uk/Biographies/Kotelnikov.html"], ["КФУ: История кафедры геометрии", "https://kpfu.ru/math/history/kafedra-geometrii"]],
-      painter: "kotelnikov", video: null },
+      painter: "kotelnikov", video: "./kotelnikov.mp4", poster: "kotelnikov-poster.jpg" },
 
     { id: "parfentiev", city: "kazan", name: "Николай Николаевич Парфентьев", short: "Парфентьев", born: 1877, life: "род. 1877",
       bornLine: "Родился в Казани 19 февраля (3 марта) 1877 года. Профессор Казанского университета, учитель целого поколения математиков.",
@@ -650,7 +637,7 @@ var RELIEF={"r":["455,4hp,-6,f,-k,7,6,g,-o,o,-3,r,-m,b,-j,s,-k,c,0,7,g,4,l,o,16,
       ],
       facts: ["Перевёл на русский язык «Лекции по избранным вопросам элементарной геометрии» Ф. Клейна.", "Организовал физико-математическую комиссию при Педагогическом обществе.", "Источники называют разные даты рождения; указана дата из издания КФУ."],
       sources: [["КФУ: Парфентьев Н.Н.", "https://kpfu.ru/portal/docs/F_1680420952/164_6_gum_3.pdf"], ["Math Genealogy", "https://mathgenealogy.com/id.php?id=105436"]],
-      painter: "parfentiev", video: null },
+      painter: "parfentiev", video: "parfentiev.mp4", poster: "parfentiev-poster.jpg" },
 
     { id: "laptev", city: "kazan", name: "Борис Лукич Лаптев", short: "Лаптев", born: 1905, life: "род. 1905",
       bornLine: "Родился в Казани 23 апреля 1905 года в семье врача. Геометр, ученик П.А. Широкова.",
@@ -741,7 +728,7 @@ var RELIEF={"r":["455,4hp,-6,f,-k,7,6,g,-o,o,-3,r,-m,b,-j,s,-k,c,0,7,g,4,l,o,16,
   var PEOPLE = SCIENTISTS.map(function (s) {
     var m = SCHOOL_META[s.id], w = SCHOOL_WORK[s.id];
     return { id: s.id, name: s.name, short: s.short, born: s.born, life: s.life, ll: m.ll, city: m.city, sub: m.sub, z: m.z, approx: m.approx, work: [w[0], w[1]], workCity: w[2],
-      layers: m.layers, awards: m.awards || [], teachers: m.teachers, bornLine: s.bornLine, scenes: s.scenes, facts: s.facts, sources: s.sources, painter: s.painter, video: s.video, about: "" };
+      layers: m.layers, awards: m.awards || [], teachers: m.teachers, bornLine: s.bornLine, scenes: s.scenes, facts: s.facts, sources: s.sources, painter: s.painter, video: s.video, poster: s.poster, about: "" };
   });
 
   function add(o) {
@@ -751,7 +738,7 @@ var RELIEF={"r":["455,4hp,-6,f,-k,7,6,g,-o,o,-3,r,-m,b,-j,s,-k,c,0,7,g,4,l,o,16,
   }
 
   add({ id: "bartels", name: "Иоганн Мартин Бартельс", short: "Бартельс", born: 1769, life: "1769 – 1836", ll: [10.52, 52.27], city: "Брауншвейг", sub: "Германия", work: [49.12, 55.79], workCity: "Казань", layers: ["school"], video: "bartels.mp4", poster: "bartels-poster.jpg", about: "Учитель Гаусса в Брауншвейге. В 1808 году приехал в Казань по приглашению основателя университета Румовского, около двенадцати лет был профессором математики и учил Лобачевского. В 1821 году перешёл в Дерптский университет.", sources: [["КФУ: Бартельс М.Ф.", "https://kpfu.ru/portal/docs/F_1706022523/Bartels.MF.pdf"], ["MacTutor", "https://mathshistory.st-andrews.ac.uk/Biographies/Bartels/"]] });
-  add({ id: "chebotarev", name: "Николай Григорьевич Чеботарёв", short: "Чеботарёв", born: 1894, life: "1894 – 1947", ll: [26.58, 48.68], city: "Каменец-Подольский", sub: "Украина, тогда Российская империя", work: [49.12, 55.79], workCity: "Казань", layers: ["school"], about: "Алгебраист, автор теоремы Чеботарёва о плотности. С 1928 года работал в Казанском университете, основал НИИ математики и механики, который теперь носит его имя, и создал казанскую алгебраическую школу.", sources: [["MacTutor", "https://mathshistory.st-andrews.ac.uk/Biographies/Chebotaryov/"], ["К. Конрад (UConn): очерк о Чеботарёве и Казани", "https://kconrad.math.uconn.edu/kazan/chebotarev.pdf"]] });
+  add({ id: "chebotarev", name: "Николай Григорьевич Чеботарёв", short: "Чеботарёв", born: 1894, life: "1894 – 1947", ll: [26.58, 48.68], city: "Каменец-Подольский", sub: "Украина, тогда Российская империя", work: [49.12, 55.79], workCity: "Казань", layers: ["school"], video: "chebotarev.mp4", poster: "chebotarev-poster.jpg", about: "Алгебраист, автор теоремы Чеботарёва о плотности. С 1928 года работал в Казанском университете, основал НИИ математики и механики, который теперь носит его имя, и создал казанскую алгебраическую школу.", sources: [["MacTutor", "https://mathshistory.st-andrews.ac.uk/Biographies/Chebotaryov/"], ["К. Конрад (UConn): очерк о Чеботарёве и Казани", "https://kconrad.math.uconn.edu/kazan/chebotarev.pdf"]] });
   /* Премия Казанского физико-математического общества и КГУ */
   add({ id: "lie", name: "Софус Ли", short: "Ли", born: 1842, life: "1842 – 1899", ll: [5.99, 61.91], city: "Нордфьордейд", sub: "Норвегия", work: [12.37, 51.34], workCity: "Лейпциг", awards: [{ layer: "kazan", year: 1897 }], about: "Создал теорию непрерывных групп преобразований, из которой выросли группы и алгебры Ли. Первый лауреат премии Лобачевского. С 1886 по 1898 год профессор Лейпцигского университета.", sources: [["MacTutor", "https://mathshistory.st-andrews.ac.uk/Biographies/Lie/"], ["КФУ: лауреаты медали и премии Лобачевского", "https://mathcenter.kpfu.ru/medal"]] });
   add({ id: "killing", name: "Вильгельм Киллинг", short: "Киллинг", born: 1847, life: "1847 – 1923", ll: [8.08, 50.77], city: "Бурбах", sub: "около Зигена, Германия", work: [7.63, 51.96], workCity: "Мюнстер", awards: [{ layer: "kazan", year: 1900 }], about: "Исследовал структуру алгебр Ли и заложил основы их классификации. С 1892 года профессор Мюнстерского университета.", sources: [["MacTutor", "https://mathshistory.st-andrews.ac.uk/Biographies/Killing/"], ["КФУ: лауреаты медали и премии Лобачевского", "https://mathcenter.kpfu.ru/medal"]] });
@@ -1436,7 +1423,13 @@ var RELIEF={"r":["455,4hp,-6,f,-k,7,6,g,-o,o,-3,r,-m,b,-j,s,-k,c,0,7,g,4,l,o,16,
     }
     if (s.scenes) {
       var stage = el("div", "stage"); body.appendChild(stage);
-      if (s.video) stage.innerHTML = '<video controls playsinline preload="metadata" poster="' + (s.poster || "") + '" src="' + s.video + '"></video>';
+      if (s.video) {
+        var vid = document.createElement("video");
+        vid.controls = true; vid.playsInline = true; vid.preload = "metadata";
+        if (s.poster) vid.poster = s.poster;
+        var file = document.createElement("source"); file.src = s.video; file.type = "video/mp4";
+        vid.appendChild(file); stage.appendChild(vid);
+      }
       else {
         var bars = el("div", "bars"), cv = el("canvas"), cap = el("div", "cap", '<div class="k"></div><p></p>');
         stage.appendChild(cv); stage.appendChild(cap); stage.appendChild(bars);
@@ -1490,19 +1483,10 @@ var RELIEF={"r":["455,4hp,-6,f,-k,7,6,g,-o,o,-3,r,-m,b,-j,s,-k,c,0,7,g,4,l,o,16,
     if (Eng.busy) return;
     route.layer = layer || route.layer || "school"; route.on = true;
     LAYERS.forEach(function (l) { state.active[l.id] = l.id === route.layer; });
-    $("routePick").hidden = true; $("routeBtn").setAttribute("aria-expanded", "false");
     refresh(); route.list = routeList();
     var f = firstUnseen(); routeGo(f < 0 ? 0 : f); updateRoute();
   }
   function routeStop() { route.on = false; route.cur = null; updateRoute(); }
-  function buildRoutePick() {
-    var box = $("routePick"); box.innerHTML = "<p>Выберите слой: маршрут пойдёт по его учёным в порядке рождения.</p>";
-    LAYERS.forEach(function (l) {
-      var n = PEOPLE.filter(function (p) { return p.born != null && p.layers.indexOf(l.id) >= 0; }).length; if (!n) return;
-      var b = el("button", null, '<i style="background:' + l.color + '"></i><span>' + l.label + "</span><b>" + n + "</b>"); b.type = "button";
-      b.onclick = function () { routeStart(l.id); }; box.appendChild(b);
-    });
-  }
   function routeStatus() {
     var n = route.list.length, i = routeIdx();
     return { n: n, i: i, done: n > 0 && seenCount(route.list) === n };
@@ -1528,11 +1512,10 @@ var RELIEF={"r":["455,4hp,-6,f,-k,7,6,g,-o,o,-3,r,-m,b,-j,s,-k,c,0,7,g,4,l,o,16,
     var bonus = "";
     try { if (typeof Q !== "undefined" && Q.mis && !Q.mis["route-" + route.layer]) { award(Q.mis, "route-" + route.layer, 10, "слой «" + ln + "» пройден"); bonus = " Бонус за слой: 10 ★."; } } catch (e) {}
     d.innerHTML = "<p><b>Слой «" + ln + "» пройден.</b> Вы познакомились со всеми " + st.n + " учёными слоя." + bonus + "</p>";
-    var rb = el("div", "rbtns"), b1 = el("button", "pri", "Другой слой"), b2 = el("button", null, "Магазин наград"), b3 = el("button", null, "Выйти");
-    b1.onclick = function () { d.dataset.layer = ""; $("routePick").hidden = false; };
+    var rb = el("div", "rbtns"), b2 = el("button", "pri", "Магазин наград"), b3 = el("button", null, "Выйти");
     b2.onclick = function () { var sb = document.getElementById("qShop"); if (sb) sb.click(); };
     b3.onclick = routeStop;
-    rb.appendChild(b1); rb.appendChild(b2); rb.appendChild(b3); d.appendChild(rb);
+    rb.appendChild(b2); rb.appendChild(b3); d.appendChild(rb);
   }
   function routeStrip() {
     if (!route.on) return null;
@@ -1631,7 +1614,7 @@ var RELIEF={"r":["455,4hp,-6,f,-k,7,6,g,-o,o,-3,r,-m,b,-j,s,-k,c,0,7,g,4,l,o,16,
     return box;
   }
 
-  $("routeBtn").onclick = function () { if (route.on) { routeStop(); return; } var pk = $("routePick"); if (!pk.children.length) buildRoutePick(); pk.hidden = !pk.hidden; this.setAttribute("aria-expanded", pk.hidden ? "false" : "true"); };
+  $("routeBtn").onclick = function () { if (route.on) { routeStop(); return; } routeStart("school"); };
   $("rPrev").onclick = function () { routeGo(routeIdx() - 1); };
   $("rNext").onclick = function () { var i = routeIdx(); routeGo(i < 0 ? 0 : i + 1); };
   $("rExit").onclick = routeStop;
@@ -1673,7 +1656,7 @@ var RELIEF={"r":["455,4hp,-6,f,-k,7,6,g,-o,o,-3,r,-m,b,-j,s,-k,c,0,7,g,4,l,o,16,
     return alive ? "Найди на карте, где сейчас работает <b>" + s.name + "</b>." : "Найди на карте место работы: <b>" + s.name + "</b>.";
   }
   /* ---- задания-цепочки: часть на карте, часть вне карты ---- */
-  var KAZ = KAZAN, GTT = [9.94, 51.54], BRS = [10.52, 52.27];
+  var KAZ = KAZAN, GTT = [9.94, 51.54], BRS = [10.52, 52.27], NNOV = [44.00, 56.33], URE = [45.78, 57.46];
   var MIS = {
     lobachevsky: { title: "Путь Лобачевского и Гаусса", steps: [
       { type: "order", key: "lob-order", pts: 15, text: "Расставь события жизни Лобачевского в том порядке, в каком они происходили. Нажимай на события по очереди, начиная с самого раннего.",
@@ -1682,7 +1665,9 @@ var RELIEF={"r":["455,4hp,-6,f,-k,7,6,g,-o,o,-3,r,-m,b,-j,s,-k,c,0,7,g,4,l,o,16,
         ok: "Бартельс", bad: ["Н.Д. Брашман", "А.Ф. Попов", "И.М. Симонов"], why: "Мартин Бартельс родился в Брауншвейге и преподавал там, где учился Гаусс. С 1808 года он работал профессором в Казани и стал учителем Лобачевского." },
       { type: "map", key: "lob-brs", store: "mis", text: "Найди на карте город, где родился Бартельс и где он учил юного Гаусса.", ll: BRS, name: "Брауншвейг" },
       { type: "map", key: "lob-gtt", store: "mis", text: "В 1842 году Лобачевского избрали членом-корреспондентом научного общества в городе, где работал Гаусс. Найди этот город на карте.", ll: GTT, name: "Гёттинген" },
-      { type: "est", key: "lob-dist", pts: 10, text: "Признание пришло из Гёттингена, а Лобачевский работал в Казани. Оцени расстояние по прямой между Гёттингеном и Казанью в километрах.", a: GTT, b: KAZ, an: "Гёттингена" }
+      { type: "est", key: "lob-dist", pts: 10, text: "Признание пришло из Гёттингена, а Лобачевский работал в Казани. Оцени расстояние по прямой между Гёттингеном и Казанью в километрах.", a: GTT, b: KAZ, an: "Гёттингена" },
+      { type: "est", pyth: true, key: "lob-pyth", pts: 15, a: NNOV, b: KAZ, c: URE, an: "Нижнего Новгорода",
+        text: "Лобачевский родился в Нижнем Новгороде, а работал в Казани. Выберем третий город — Урень (Нижегородская область) так, чтобы треугольник «Нижний Новгород — Урень — Казань» был прямоугольным: прямой угол находится в Урене. Длины катетов подписаны. Вычисли по теореме Пифагора расстояние между Нижним Новгородом и Казанью (гипотенузу) в километрах." }
     ], bonus: 20 }
   };
   function genericMission(s) {
@@ -1717,6 +1702,7 @@ var RELIEF={"r":["455,4hp,-6,f,-k,7,6,g,-o,o,-3,r,-m,b,-j,s,-k,c,0,7,g,4,l,o,16,
       else { var w = el("div", "qw"); act.appendChild(w); var go = el("button", null, "Выполнить"); go.type = "button"; go.onclick = function () { go.hidden = true; stepUI(st, w, function () { rebuildQuest(s, box); }); }; act.appendChild(go); }
       main.appendChild(act); box.appendChild(row);
     });
+    if (s.id === "lobachevsky") return box;
     var tk = taskFor(s), tr = el("div", "qstep qtask"); tr.appendChild(el("div", "qn", "✎"));
     tr.appendChild(el("div", "qm", "<p><b>" + tk[0] + ".</b> " + tk[1] + "</p>")); box.appendChild(tr);
     return box;
@@ -1741,17 +1727,21 @@ var RELIEF={"r":["455,4hp,-6,f,-k,7,6,g,-o,o,-3,r,-m,b,-j,s,-k,c,0,7,g,4,l,o,16,
       });
       w.appendChild(fb);
     } else if (st.type === "est") {
-      var real = hav(st.a, st.b), row = el("div", "trow", '<input type="number" inputmode="numeric" min="0" step="10" placeholder="км" aria-label="Оценка в километрах"><button type="button">Проверить</button>'), f2 = el("div", "tfb"); f2.setAttribute("aria-live", "polite");
+      var real = hav(st.a, st.b), leg1, leg2;
+      if (st.pyth) { leg1 = Math.round(hav(st.a, st.c)); leg2 = Math.round(hav(st.b, st.c)); real = Math.sqrt(leg1 * leg1 + leg2 * leg2); }
+      var row = el("div", "trow", '<input type="number" inputmode="numeric" min="0" step="10" placeholder="км" aria-label="Оценка в километрах"><button type="button">Проверить</button>'), f2 = el("div", "tfb"); f2.setAttribute("aria-live", "polite");
       var inp = row.querySelector("input"), bt = row.querySelector("button");
       function chk() {
         var v = parseFloat(inp.value); if (!isFinite(v) || v < 0) { f2.textContent = "Введи число километров."; return; }
         var err = Math.abs(v - real) / real, pts = err <= 0.1 ? st.pts : err <= 0.3 ? Math.round(st.pts * 0.6) : 2;
         award(Q.mis, st.key, pts, "за оценку расстояния");
-        f2.innerHTML = "<b>" + (err <= 0.1 ? "Очень точно." : err <= 0.3 ? "Хорошая оценка." : "Приблизительно.") + "</b> По прямой около <b>" + fmtKm(real) + " км</b>, твоя оценка отличается на " + Math.round(err * 100) + "%.";
+        if (st.pyth) f2.innerHTML = "<b>" + (err <= 0.1 ? "Верно." : "Проверь вычисления.") + "</b> c² = " + leg1 + "² + " + leg2 + "² = " + (leg1 * leg1 + leg2 * leg2) + ", откуда c ≈ <b>" + Math.round(real) + " км</b>. Расстояние по карте: около " + Math.round(hav(st.a, st.b)) + " км.";
+        else f2.innerHTML = "<b>" + (err <= 0.1 ? "Очень точно." : err <= 0.3 ? "Хорошая оценка." : "Приблизительно.") + "</b> По прямой около <b>" + fmtKm(real) + " км</b>, твоя оценка отличается на " + Math.round(err * 100) + "%.";
         bt.disabled = true; inp.disabled = true; var nx = el("button", "sec", "Дальше"); nx.type = "button"; nx.onclick = finish; w.appendChild(nx);
       }
       bt.onclick = chk; inp.onkeydown = function (e) { if (e.key === "Enter") chk(); };
-      w.appendChild(refBlock(st.a, st.pn || "Гёттинген")); w.appendChild(row); w.appendChild(f2);
+      if (st.pyth) w.appendChild(triBlock(st, leg1, leg2)); else w.appendChild(refBlock(st.a, st.pn || "Гёттинген"));
+      w.appendChild(row); w.appendChild(f2);
     } else if (st.type === "order") {
       var want = st.items.slice(), pool = shuffle(want), nxt = 0, wrong = 0, fb3 = el("div", "tfb"), lst = el("div", "qopts"), got3 = el("ol", "qorder");
       fb3.setAttribute("aria-live", "polite");
@@ -1769,6 +1759,25 @@ var RELIEF={"r":["455,4hp,-6,f,-k,7,6,g,-o,o,-3,r,-m,b,-j,s,-k,c,0,7,g,4,l,o,16,
       });
       w.appendChild(got3); w.appendChild(lst); w.appendChild(fb3);
     }
+  }
+  function triBlock(st, l1, l2) {
+    var k = Math.cos(st.c[1] * Math.PI / 180), pt = function (ll) { return [(ll[0] - st.a[0]) * k, -(ll[1] - st.a[1])]; };
+    var A = pt(st.a), B = pt(st.b), C = pt(st.c), xs = [A[0], B[0], C[0]], ys = [A[1], B[1], C[1]], x0 = Math.min.apply(null, xs), y0 = Math.min.apply(null, ys), sc = 140 / Math.max(Math.max.apply(null, xs) - x0, Math.max.apply(null, ys) - y0);
+    function q(p) { return [(p[0] - x0) * sc + 125, (p[1] - y0) * sc + 36]; }
+    var a = q(A), b = q(B), c = q(C), ux = (a[0] - c[0]), uy = (a[1] - c[1]), vx = (b[0] - c[0]), vy = (b[1] - c[1]), ul = Math.hypot(ux, uy), vl = Math.hypot(vx, vy), m = 9;
+    var r1 = [c[0] + ux / ul * m, c[1] + uy / ul * m], r2 = [c[0] + vx / vl * m, c[1] + vy / vl * m], r3 = [r1[0] + vx / vl * m, r1[1] + vy / vl * m];
+    function mid(p, r) { return [(p[0] + r[0]) / 2, (p[1] + r[1]) / 2]; }
+    var m1 = mid(a, c), m2 = mid(b, c), m3 = mid(a, b);
+    var svg = '<svg viewBox="0 0 360 175" role="img" aria-label="Прямоугольный треугольник Нижний Новгород, Урень, Казань: катеты ' + l1 + ' и ' + l2 + ' километров">' +
+      '<polygon points="' + a + " " + b + " " + c + '" class="tri-f"/>' +
+      '<line x1="' + a[0] + '" y1="' + a[1] + '" x2="' + b[0] + '" y2="' + b[1] + '" class="tri-h"/>' +
+      '<polyline points="' + r1 + " " + r3 + " " + r2 + '" class="tri-r"/>' +
+      [[a, "Нижний Новгород", -8, 4, "end"], [b, "Казань", 6, 16, "start"], [c, "Урень", 6, -8, "start"]].map(function (x) { return '<circle cx="' + x[0][0] + '" cy="' + x[0][1] + '" r="4" class="tri-d"/><text x="' + (x[0][0] + x[2]) + '" y="' + (x[0][1] + x[3]) + '" text-anchor="' + x[4] + '" class="tri-t">' + x[1] + "</text>"; }).join("") +
+      '<text x="' + (m1[0] - 8) + '" y="' + m1[1] + '" text-anchor="end" class="tri-l">' + l1 + ' км</text>' +
+      '<text x="' + (m2[0] + 8) + '" y="' + (m2[1] + 4) + '" class="tri-l">' + l2 + ' км</text>' +
+      '<text x="' + (m3[0]) + '" y="' + (m3[1] + 18) + '" text-anchor="middle" class="tri-q">? км</text></svg>';
+    var w = el("div", "tri", svg + '<p class="tri-n">Катеты: ' + l1 + ' км (Нижний Новгород — Урень) и ' + l2 + ' км (Урень — Казань). Прямой угол в Урене. Подсказка: c² = a² + b².</p>');
+    return w;
   }
   function bar() { return $("gbar"); }
   function guessStart(id, step) {
@@ -1919,7 +1928,6 @@ var RELIEF={"r":["455,4hp,-6,f,-k,7,6,g,-o,o,-3,r,-m,b,-j,s,-k,c,0,7,g,4,l,o,16,
     setText("hfPeople", PEOPLE.length); setText("hfLayers", LAYERS.length);
     var sc = PEOPLE.filter(function (p) { return p.layers.indexOf("school") >= 0; }).length; setText("hfSchool", sc);
     $("hsRoute").onclick = function () { toMap(function () { routeStart("school"); }); };
-    $("hsQuest").onclick = function () { toMap(function () { pick("lobachevsky"); }); };
     $("hsFree").onclick = function () { toMap(); };
     $("heroDown").onclick = function () { toMap(); };
     $("upBtn").onclick = function () { hero.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "start" }); };
@@ -1933,5 +1941,3 @@ var RELIEF={"r":["455,4hp,-6,f,-k,7,6,g,-o,o,-3,r,-m,b,-j,s,-k,c,0,7,g,4,l,o,16,
 
 })();
 </script>
-
-</body></html>
